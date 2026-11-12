@@ -6,7 +6,7 @@ An educational starter for AI-assisted spectrum occupancy sensing and the wider 
 
 ## What's here
 
-- [`AI-based spectrum sensing or RF Sensing.md`](AI-based%20spectrum%20sensing%20or%20RF%20Sensing.md): synthesized guide to the linked survey, key mathematical models, sensing tasks, AI methods, deployment concerns, and an original system blueprint.
+- [`AI-based spectrum sensing or RF Sensing.md`](AI-based%20spectrum%20sensing%20or%20RF%20Sensing.md): expanded, page-referenced survey synthesis covering channel models and metrics, radar detection/estimation/tracking, spectrum and signal analysis, localization/channel charting, datasets, and deployment architecture. Includes a source-coverage index and clearly separates survey findings from the original starter blueprint.
 - `src/rf_sensing/synthetic.py`: seeded IQ data generator with occupied/unoccupied labels and randomized SNR, carrier offset, phase, and fading.
 - `src/rf_sensing/model.py`: compact 1-D CNN over real/imaginary IQ channels.
 - `src/rf_sensing/agents.py`: model-backed sensing agent and a conservative policy agent that emits recommendations, not radio-control commands.
