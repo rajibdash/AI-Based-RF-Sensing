@@ -6,8 +6,8 @@ An educational starter for AI-assisted spectrum occupancy sensing and the wider 
 
 ## What's here
 
-- [`AI-based spectrum sensing or RF Sensing.md`](AI-based%20spectrum%20sensing%20or%20RF%20Sensing.md): expanded, page-referenced survey synthesis covering channel models and metrics, radar detection/estimation/tracking, spectrum and signal analysis, localization/channel charting, datasets, and deployment architecture. Includes a source-coverage index and clearly separates survey findings from the original starter blueprint.
-- `src/rf_sensing/synthetic.py`: seeded IQ data generator with occupied/unoccupied labels and randomized SNR, carrier offset, phase, and fading.
+- [`AI-based spectrum sensing or RF Sensing.md`](AI-based%20spectrum%20sensing%20or%20RF%20Sensing.md): This md file is expanded, page-referenced survey synthesis covering control and data channel models and metrics, radar detection/estimation/tracking, spectrum and signal analysis, localization/channel charting, structured datasets, and deployment architecture. Also, includes a source-coverage index and clearly separates survey findings from the original starter blueprint document.
+- `src/rf_sensing/synthetic.py`: This file is seeded IQ data generator with occupied/unoccupied labels and randomized SINR, carrier offset, phase, and fading.
 - `src/rf_sensing/model.py`: compact 1-D CNN over real/imaginary IQ channels.
 - `src/rf_sensing/agents.py`: model-backed sensing agent and a conservative policy agent that emits recommendations, not radio-control commands.
 - `src/rf_sensing/train.py`: deterministic train/validation loop with a versioned checkpoint payload.
@@ -15,11 +15,13 @@ An educational starter for AI-assisted spectrum occupancy sensing and the wider 
 ## Quick start
 
 ```bash
+
 python -m venv .venv
 . .venv/bin/activate              # Windows: .venv\\Scripts\\activate
 python -m pip install -e '.[dev]'
 python -m rf_sensing.train --epochs 8 --samples 6000 --output artifacts/rf_sensing.pt
 pytest
+
 ```
 
 The training command prints validation loss/accuracy and saves model weights plus the generator/training metadata. Keep `artifacts/` out of version control; checkpoints should be tracked with a model/data registry when moving beyond this demo.
@@ -52,4 +54,7 @@ python -m rf_sensing.train --help
 pytest -q
 ```
 
-See the guide for the scope, assumptions, metrics, lifecycle, caveats, and further-work plan. The source survey citation is included there.
+## Disclaimer
+
+See the guide for the scope, assumptions, metrics, lifecycle, caveats, and further-work plan. The source survey citation is included there. 
+This is AI assisted tool generated document, response might have some errors Or hallucinations.
