@@ -2,7 +2,7 @@
 
 An educational starter for AI-assisted spectrum occupancy sensing and the wider radio-sensing landscape. It pairs an original technical guide with a reproducible synthetic-data baseline, advisory agents, and a small CI setup.
 
-> **Scope:** this is a research prototype, not a certified spectrum monitor or an autonomous transmitter controller. The included data is synthetic; it does not reproduce results from the cited paper.
+> **Scope:** the executable code is a synthetic binary occupancy-classification demo with advisory recommendations. It is not an implementation of the survey's broader sensing framework, a certified spectrum monitor, or an autonomous transmitter controller. The included data is synthetic; it does not reproduce results from the cited paper.
 
 ## What's here
 
