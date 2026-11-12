@@ -30,13 +30,13 @@ The first two often use cooperating transmitters and receivers; emitter analysis
 
 ```mermaid
 flowchart LR
-  RF[RF observations] --> P[Physical perception\nobjects, range, motion]
-  RF --> C[Channel awareness\npropagation, position, maps]
-  RF --> E[EM awareness\noccupancy, waveform, emitter]
-  P --> F[Shared features and task heads]
+  RF[RF observations] --> P[Physical perception\nobjects,\nrange, motion]
+  RF --> C[Channel awareness\npropagation,\nposition, maps]
+  RF --> E[EM awareness\noccupancy,\nwaveform, emitter]
+  P --> F[Shared features\nand task heads]
   C --> F
   E --> F
-  F --> N[Network decisions\nsubject to policy and safety gates]
+  F --> N[Network decisions\nsubject to\npolicy and\nsafety gates]
 ```
 
 ## 2. Signal and task models
@@ -223,15 +223,15 @@ These approaches can reduce trainable parameters, data requirements, or runtime 
 
 ```mermaid
 flowchart LR
-  A[RF front end / IQ capture] --> B[Timestamp, calibration, quality checks]
-  B --> C[Windowing / PSD / feature extraction]
-  C --> D[Detector and classifier models]
-  D --> E[Occupancy and confidence estimates]
-  E --> F[Policy agent: protect / resense / candidate]
-  F --> G[Human or network policy gate]
-  G --> H[Authorized downstream controller]
-  I[Telemetry, labels, drift checks] --> J[Dataset and experiment registry]
-  J --> K[Offline train, evaluate, approve]
+  A[RF front end\n/ IQ capture] --> B[Timestamp,\ncalibration,\nquality checks]
+  B --> C[Windowing / PSD\n/ feature extraction]
+  C --> D[Detector and\nclassifier models]
+  D --> E[Occupancy and\nconfidence estimates]
+  E --> F[Policy agent: protect\n/ resense\n/ candidate]
+  F --> G[Human or network\npolicy gate]
+  G --> H[Authorized\ndownstream\ncontroller]
+  I[Telemetry,\nlabels,\ndrift checks] --> J[Dataset and\nexperiment\nregistry]
+  J --> K[Offline train,\nevaluate,\napprove]
   K --> D
   H --> I
 ```
