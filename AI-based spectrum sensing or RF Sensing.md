@@ -1,12 +1,14 @@
 # AI-Based Spectrum Sensing Or RF Sensing
 
-## The Objective
+## Repository implementation scope
 
-An AI-based spectrum sensing and sharing framework that uses real-time radio observations to detect interference, classify signals, and support adaptive network control. By enabling real-time spectrum awareness and intelligent control, the framework helps networks improve spectrum utilization, adapt to changing RF conditions, and support more reliable wireless performance. The system can also identify previously unseen signal types, expanding spectrum awareness beyond traditional approaches.
+The survey covers a broad radio-sensing landscape; this repository does **not** implement an end-to-end system for that landscape. The executable starter generates synthetic complex-IQ windows for a binary noise-only/signal-present task, trains a small CNN to estimate occupancy, and maps its probability to advisory `protect`, `resense`, or `access_candidate` outcomes.
+
+The starter does not capture live RF data, classify modulation or unknown signal types, perform radar or localization, provide real-time guarantees, or control a radio or network. The survey discussion and architecture recommendations in this guide are technical context and proposed directions, not descriptions of implemented code. The implemented subset and its limitations are detailed in sections 5, 6, 8, and 9.
 
 ## Purpose and source
 
-This guide provides an expanded, implementation-oriented synthesis of the linked survey, including its mathematical foundations, passive-object sensing, spectrum/emitter analysis, datasets, and integration challenges. It deliberately summarizes and reorganizes the ideas rather than reproducing the paper's prose, tables, or illustrations. Diagrams below are original conceptual diagrams. The starter code in this repository is a small, reproducible example, not a validated implementation of the survey's experimental methods.
+This guide provides an expanded technical synthesis of the linked survey, including its mathematical foundations, passive-object sensing, spectrum/emitter analysis, datasets, and integration challenges. It deliberately summarizes and reorganizes the ideas rather than reproducing the paper's prose, tables, or illustrations. Diagrams below are original conceptual diagrams. The starter code in this repository is a small, reproducible example, not a validated implementation of the survey's experimental methods.
 
 **Source:** V. Shatov et al., “Integrated Radio Sensing Capabilities for 6G Networks: AI/ML Perspective,” *IEEE Communications Surveys & Tutorials*, vol. 28, pp. 5081–5120, 2026, [doi:10.1109/COMST.2026.3668458](https://doi.org/10.1109/COMST.2026.3668458). The paper asks readers to cite the version of record. Source PDF: [`references/AI:ML Perspective of Radio Sensing.pdf`](https://github.com/rajibdash/Distributed-multisensor-ISAC/blob/main/references/AI%3AML%20Perspective%20of%20Radio%20Sensing.pdf).
 
