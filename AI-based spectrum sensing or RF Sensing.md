@@ -1,4 +1,4 @@
-# AI-Based Spectrum Sensing and RF Sensing
+# AI-Based Spectrum Sensing Or RF Sensing
 
 ## The Objective
 
