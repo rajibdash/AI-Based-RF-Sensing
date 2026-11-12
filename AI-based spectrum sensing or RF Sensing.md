@@ -222,18 +222,42 @@ These approaches can reduce trainable parameters, data requirements, or runtime 
 ## 5. Original reference architecture
 
 ```mermaid
-flowchart LR
-  A[RF front end\n/ IQ capture] --> B[Timestamp,\ncalibration,\nquality checks]
-  B --> C[Windowing / PSD\n/ feature extraction]
-  C --> D[Detector and\nclassifier models]
-  D --> E[Occupancy and\nconfidence estimates]
-  E --> F[Policy agent: protect\n/ resense\n/ candidate]
-  F --> G[Human or network\npolicy gate]
-  G --> H[Authorized\ndownstream\ncontroller]
-  I[Telemetry,\nlabels,\ndrift checks] --> J[Dataset and\nexperiment\nregistry]
-  J --> K[Offline train,\nevaluate,\napprove]
-  K --> D
+flowchart TB
+  subgraph online["Live sensing and advisory path"]
+    direction TB
+    A["RF front end<br/>IQ capture"] --> B["Timestamp, calibration<br/>and quality checks"]
+    B --> C["Windowing, PSD<br/>and feature extraction"]
+    C --> D["Detector and<br/>classifier models"]
+    D --> E["Occupancy and<br/>confidence estimates"]
+    E --> F["Policy agent<br/>protect / resense / candidate"]
+    F --> G["Human or network<br/>policy gate"]
+    G --> H["Authorized downstream<br/>controller"]
+  end
+
+  subgraph lifecycle["Offline model lifecycle"]
+    direction LR
+    I["Telemetry, labels,<br/>and drift checks"] --> J["Dataset and<br/>experiment registry"]
+    J --> K["Offline training,<br/>evaluation, approval"]
+  end
+
   H --> I
+  K -->|approved model| D
+
+  classDef capture fill:#e8f1ff,stroke:#1d4ed8,color:#0b1f44,stroke-width:2px,font-size:16px
+  classDef processing fill:#e8f5e9,stroke:#2e7d32,color:#12351a,stroke-width:2px,font-size:16px
+  classDef model fill:#f3e8ff,stroke:#7e22ce,color:#3b0764,stroke-width:2px,font-size:16px
+  classDef decision fill:#fff4e5,stroke:#c2410c,color:#431407,stroke-width:2px,font-size:16px
+  classDef gate fill:#fee2e2,stroke:#b91c1c,color:#450a0a,stroke-width:3px,font-size:16px
+  classDef controller fill:#f1f5f9,stroke:#334155,color:#0f172a,stroke-width:2px,font-size:16px
+  classDef lifecycle fill:#e0f2f1,stroke:#0f766e,color:#042f2e,stroke-width:2px,font-size:16px
+  class A capture
+  class B,C processing
+  class D model
+  class E,F decision
+  class G gate
+  class H controller
+  class I,J,K lifecycle
+  linkStyle default stroke:#475569,stroke-width:2px
 ```
 
 The code here implements only a synthetic single-link detector, a CNN inference wrapper, and a non-actuating policy recommendation. It does not implement RF capture, multi-band sensing, cooperative fusion, a scheduler, regulatory checks, or closed-loop control.
