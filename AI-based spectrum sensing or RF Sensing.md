@@ -1,5 +1,9 @@
 # AI-Based Spectrum Sensing and RF Sensing
 
+## The Objective
+
+An AI-based spectrum sensing and sharing framework that uses real-time radio observations to detect interference, classify signals, and support adaptive network control. By enabling real-time spectrum awareness and intelligent control, the framework helps networks improve spectrum utilization, adapt to changing RF conditions, and support more reliable wireless performance. The system can also identify previously unseen signal types, expanding spectrum awareness beyond traditional approaches.
+
 ## Purpose and source
 
 This guide provides an expanded, implementation-oriented synthesis of the linked survey, including its mathematical foundations, passive-object sensing, spectrum/emitter analysis, datasets, and integration challenges. It deliberately summarizes and reorganizes the ideas rather than reproducing the paper's prose, tables, or illustrations. Diagrams below are original conceptual diagrams. The starter code in this repository is a small, reproducible example, not a validated implementation of the survey's experimental methods.
@@ -10,9 +14,9 @@ This guide provides an expanded, implementation-oriented synthesis of the linked
 
 **Reading paths:** sections 1–4 introduce the common foundations; sections 5–9 describe the original starter architecture and engineering recommendations; sections 10–14 expand the survey's radar, spectrum, localization, dataset, and integration material. The guide is a technical synthesis, not a verbatim extraction or a substitute for the complete literature review.
 
-## 1. What “radio sensing” covers
+## 1. What “radio sensing” covers ?
 
-Radio sensing is broader than radar. The survey connects three related functions that can share RF hardware, data pipelines, and learning techniques:
+Radio sensing is broader than radar. The current survey from the document connects three related functions that can share RF hardware, data pipelines, and learning techniques:
 
 | Domain | What is inferred | Example tasks |
 |---|---|---|
